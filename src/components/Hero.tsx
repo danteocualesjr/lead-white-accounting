@@ -2,12 +2,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Background with overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-accounting-950/40 to-accounting-900/90 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-accounting-950/60 to-accounting-900/95 z-0"></div>
+      
+      {/* Background image */}
+      <div className="absolute inset-0 z-[-1]">
+        <AspectRatio ratio={16 / 9} className="h-full">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2426&q=80"
+            alt="Professional accounting workspace"
+            className="w-full h-full object-cover"
+          />
+        </AspectRatio>
+      </div>
       
       {/* Main content */}
       <div className="container mx-auto px-4 py-24 md:py-36 relative z-10">
